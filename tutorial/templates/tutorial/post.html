@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guidek</title>
+    <link rel="stylesheet" href="{% static 'tutorial/css/post.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-1">
+        <div class="gradient-1">
+            <div class="container">
+                <div class="n">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'login_home' %}"><img
+                        src="{% static 'tutorial/images/logo2.0.png' %}" alt=""
+                        id="logo"></a>
+                    <div class="key">
+                        <a href="{% url 'logout' 2%}">Выйти</a>
+                    </div>
+                    <div class="key1">
+                        <a href="{% url 'user_page' user.username 1%}">{{ user.username }}</a>
+                    </div>
+                {% else %}
+                    <a href="{% url 'home' %}"><img
+                        src="{% static 'tutorial/images/logo2.0.png' %}" alt=""
+                        id="logo"></a>
+                    <div class="key">
+                        <a href="{% url 'auth' 1 %}">Войти</a>
+                    </div>
+                {% endif %}
+            </div>
+                <div class="fast-search">
+                    <div class="se"><p>{{ post.title }}</p></div>
+                    {% if post.photo %}
+                             <p class="imgg"><img src="{{ MEDIA_URL }}{{ post.photo.url }}" style="width: 360px; height: 216px" alt=""></p>
+                        {% else %}
+                            <p class="imgg"><img src="{% static 'tutorial/images/default_picture.png' %}" style="width: 360px; height: 216px" alt=""></p>
+                        {% endif %}
+                    <a href="{% url 'user_page' post.username 1 %}" class="date2">Автор:&nbsp&nbsp&nbsp&nbsp{{ post.username }}</a>
+                    <p class="date1">Дата создания поста:&nbsp&nbsp&nbsp&nbsp{{ post.date }}</p>
+                    {% if user.is_authenticated and not liked %}
+                        <p class="date1">Количество лайков:&nbsp&nbsp&nbsp&nbsp{{ post.likes_amount }}&nbsp <a href="{% url 'like' post.id 1 %}" class="Like"><img src="{% static 'tutorial/images/empty heart.png' %}" alt="" id="like"></a></p>
+                    {% elif user.is_authenticated and liked %}
+                        <p class="date1">Количество лайков:&nbsp&nbsp&nbsp&nbsp{{ post.likes_amount }}&nbsp <a href="{% url 'like' post.id 0 %}" class="Like"><img src="{% static 'tutorial/images/full heart.png' %}" alt="" id="like"></a></p>
+                    {% else %}
+                        <p class="date1">Количество лайков:&nbsp&nbsp&nbsp&nbsp{{ post.likes_amount }}&nbsp <a href="{% url 'auth' 0 %}" class="Like"><img src="{% static 'tutorial/images/empty heart.png' %}" alt="" id="like"></a></p>
+                    {% endif %}
+                    <p class="content">{{ post.content }}</p>
+                </div>
+                {% if user.is_authenticated %}
+                    <div class="comment">
+                         <form method="post" action="{% url 'view_post' post.pk %}" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.non_field_errors }}
+                            {{ form.text }}
+                            {{ form.text.errors }}
+                            <button name="submit">
+                                Опубликовать комментарий
+                            </button>
+                        </form>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="container-2">
+            <div class="flex-wrapper">
+                <div class="com">
+                    {% for comment in comments %}
+                        <div class="com1">
+                            <p>{{ comment.text }}</p>
+                            <a href="{% url 'user_page' comment.author 1 %}" class="name">{{ comment.author }}</a>
+                            <p class="date">{{ comment.date }}</p>
+                            {% if user.username == comment.author %}
+                                <a class="delete" href="{% url 'delete_comment' comment.pk %}">Удалить</a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

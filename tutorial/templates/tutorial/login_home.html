@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guidek</title>
+    <link rel="stylesheet" href="{% static 'tutorial/css/login_home.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-1">
+        <div class="gradient-1">
+            <div class="container">
+                <div class="n">
+                    <a href="{% url 'login_home' %}"><img src="{% static 'tutorial/images/logo2.0.png' %}" alt="" id="logo"></a>
+                    <div class="key">
+                      <a href="{% url 'logout' 0 %}">Выйти</a>
+                    </div>
+                    <div class="key1">
+                      <a href="{% url 'user_page' user_name 1%}">{{ user_name }}</a>
+                  </div>
+                </div>
+                <h2>Познавай мир вместе с нами</h2>
+                <p>Сайт для размещения постов и гайдов в научных целях.</p>
+            </div>
+            <div class="Create_guide">
+                <a href="{% url 'create_post' %}">Создать гайд</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="actual"><h2>Актуальные посты</h2></div>
+        <div class="flex-wrapper">
+            {% for post in posts %}
+                <div class="offer-1">
+                    <div class="first">
+                        {% if post.photo %}
+                             <img src="/media/{{ post.photo }}" style="width: 360px; height: 216px" alt="">
+                        {% else %}
+                            <img src="{% static 'tutorial/images/default_picture.png' %}" style="width: 360px; height: 216px" alt="">
+                        {% endif %}
+                        <div class="time">
+                            <p>{{ post.date }}</p> {#!!!!!сделать дату!!!!!#}
+                        </div>
+                    </div>
+                    <div class="second">
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.description }}</p> {#!!!!!сделать описание не более 20 !!!!!#}
+                        <a href="{% url 'view_post' post.id %}">Подробнее</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="all">
+            <a href="{% url 'all_posts' 1 %}">Смотреть все</a>
+        </div>
+    </div>
+</body>
+</html>

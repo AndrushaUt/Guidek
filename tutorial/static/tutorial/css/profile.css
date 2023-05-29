@@ -1,0 +1,454 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: #1B1E22;
+}
+
+.background-1
+{
+    height: 730px;
+    background-image: url('../images/fon.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.gradient-1
+{
+    height: 730px;
+    background-size: cover;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 2.5%, rgba(27, 30, 34, 0.4) 42.42%, #1B1E22 80.67%);
+}
+
+.container
+{
+    width: 1135px;
+    margin: auto;
+    position: relative;
+}
+
+.n
+{
+    overflow: auto;
+}
+
+.key
+{
+    float: right;
+    width: 146px;
+    height: 48px;
+    border: #FFB800 1px solid;
+    border-radius: 10px;
+    padding-top: 11px;
+    margin-top: 41px;
+}
+
+.key a
+{
+    text-decoration: none;
+    padding-left: 42px;
+    font-size: 18px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.key1
+{
+    float: right;
+    margin-right: 20px;
+    margin-top: 57px;
+}
+
+.key1 a
+{
+    text-decoration: none;
+    padding-left: 42px;
+    font-size: 14px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.key:hover
+{
+    background-color: #FFB800;
+}
+
+.key:hover a
+{
+    color: black;
+}
+
+.key2
+{
+    float: right;
+    margin-right: 20px;
+    width: 146px;
+    height: 48px;
+    border: #FFB800 1px solid;
+    border-radius: 10px;
+    padding-top: 11px;
+    margin-top: 41px;
+}
+
+.key2 a
+{
+    text-decoration: none;
+    padding-left: 8px;
+    font-size: 18px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.key2:hover
+{
+    background-color: #FFB800;
+}
+
+.key2:hover a
+{
+    color: black;
+}
+
+.fast-search
+{
+    width: 1135px;
+    height: 400px;
+    background: rgba(51, 51, 51, 0.25);
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    margin-top: 40px;
+    padding: 0 70px 0 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    line-height: 1.5;
+    background-clip: padding-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    background: rgba(51, 51, 51, 0.5);
+    color: white;
+    margin-bottom: 21px;
+    margin-top: 60px;
+}
+
+button
+{
+    margin-right: auto;
+    margin-left: auto;
+    width: 140px;
+    height: 38px;
+    background: none;
+    margin-bottom: 50px;
+    justify-content: center;
+    display: block;
+    text-align: center;
+    color: #FFFFFF;
+    border: #FFB800 solid 1px;
+    border-radius: 4px;
+}
+
+button:hover
+{
+    background: #FFB800;
+    color: black;
+}
+
+.flex-wrapper
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.flex-wrapper > div
+{
+    height: 216px;
+    margin-top: 25px;
+    display: flex;
+}
+
+.flex-wrapper > div .offer-1
+{
+    display: flex;
+}
+
+.flex-wrapper > div .first
+{
+    height: 216px;
+    position: relative;
+    background-size: cover;
+    width: 360px;
+    margin-right: 0;
+}
+
+.flex-wrapper > div .first .time
+{
+    width: 170px;
+    height: 32px;
+    position: absolute;
+    bottom: 25px;
+    background: rgba(27, 30, 34, 0.9);
+}
+
+.flex-wrapper > div .first .time p
+{
+    text-align: center;
+    padding-top: 8px;
+    color:white;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.flex-wrapper > div .second
+{
+    position: relative;
+    height: 216px;
+    background-color: #23282F;
+    width: 775px;
+}
+
+.flex-wrapper > div .second h3
+{
+    padding-left: 20px;
+    padding-top: 16px;
+    max-width: 755px;
+    color:white;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding-bottom: 17px;
+    word-break: break-word;
+}
+
+.date
+{
+    text-decoration: none;
+    color:white;
+    opacity: 0.5;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    bottom: 20px;
+    position: absolute;
+    right: 120px;
+}
+
+.Like
+{
+    position: absolute;
+    right: 235px;
+    bottom: 21px;
+    height: 15px;
+}
+
+#like
+{
+    height: 15px;
+    width: 15px;
+}
+
+.likes_amount
+{
+    color:white;
+    opacity: 0.5;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    right: 253px;
+    bottom: 20px;
+}
+
+.edit
+{
+    text-decoration: none;
+    color:white;
+    opacity: 0.5;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    right: 283px;
+    bottom: 20px;
+}
+
+.delete
+{
+    text-decoration: none;
+    color:white;
+    opacity: 0.5;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    right: 378px;
+    bottom: 20px;
+}
+
+.description
+{
+    padding-left: 20px;
+    max-width: 755px;
+    color:white;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    word-break: break-word;
+    text-align: left;
+    padding-top: 13px;
+}
+
+.more
+{
+    text-decoration: none;
+    color:white;
+    opacity: 0.5;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.user_name
+{
+    text-decoration: none;
+    color:white;
+    opacity: 0.5;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+
+.flex-wrapper > div:hover
+{
+    transform: scale(1.05);
+}
+
+.flex-wrapper > div:hover .second
+{
+    background-color: white;
+}
+
+.flex-wrapper > div:hover .second h3
+{
+    color: black;
+}
+
+.flex-wrapper > div:hover .second p
+{
+    color: black;
+}
+
+.flex-wrapper > div:hover .second a
+{
+    color: black;
+}
+
+#logo
+{
+    padding-top: 29px;
+    padding-right: 33px;
+}
+
+
+.background-1 h2
+{
+    color: white;
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin: auto;
+}
+
+.content
+{
+    text-align: justify;
+    color: white;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding-top: 42px;
+    padding-bottom: 42px;
+}
+
+.se p
+{
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 50px;
+    padding-bottom: 14px;
+    font-size: 24px;
+    color: white;
+}
+
+.user
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding-bottom: 23px;
+    font-size: 18px;
+    color: darkgrey;
+}
+
+.date1
+{
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 25px;
+    padding-bottom: 14px;
+    font-size: 24px;
+    color: white;
+}
+
+.imgg
+{
+    text-align: center;
+}
+
+.container-1
+{
+    width: 1135px;
+    position: relative;
+    height: auto;
+    padding-bottom: 48px;
+    text-align: center;
+    margin-top: 48px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-1 a
+{
+    padding-top: 48px;
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}

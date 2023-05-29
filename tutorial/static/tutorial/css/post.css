@@ -1,0 +1,300 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: #1B1E22;
+}
+
+.background-1
+{
+    height: 730px;
+    background-image: url('../images/fon.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.gradient-1
+{
+    height: 730px;
+    background-size: cover;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 2.5%, rgba(27, 30, 34, 0.4) 42.42%, #1B1E22 80.67%);
+}
+
+.container
+{
+    width: 1135px;
+    margin: auto;
+    position: relative;
+}
+
+.n
+{
+    overflow: auto;
+}
+
+.key
+{
+    float: right;
+    width: 146px;
+    height: 48px;
+    border: #FFB800 1px solid;
+    border-radius: 10px;
+    padding-top: 11px;
+    margin-top: 41px;
+}
+
+.key a
+{
+    text-decoration: none;
+    padding-left: 42px;
+    font-size: 18px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.key1
+{
+    float: right;
+    margin-right: 20px;
+    margin-top: 57px;
+}
+
+.key1 a
+{
+    text-decoration: none;
+    padding-left: 42px;
+    font-size: 14px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.key:hover
+{
+    background-color: #FFB800;
+}
+
+.key:hover a
+{
+    color: black;
+}
+
+.fast-search
+{
+    width: 900px;
+    height: auto;
+    background: rgba(51, 51, 51, 0.25);
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    margin-top: 40px;
+    padding: 0 70px 0 70px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+.date1
+{
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 12px;
+    font-size: 24px;
+    color: white;
+}
+
+.date2
+{
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 12px;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+#like
+{
+    height: 22px;
+    width: 22px;
+}
+
+#logo
+{
+    padding-top: 29px;
+    padding-right: 33px;
+}
+
+
+.background-1 h2
+{
+    color: white;
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding-top: 152px;
+    max-width: 450px;
+}
+
+.content
+{
+    /*text-align: justify;*/
+    color: white;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding-top: 42px;
+    padding-bottom: 42px;
+    white-space: pre-line;
+}
+
+.se p
+{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 30px;
+    padding-bottom: 23px;
+    font-size: 24px;
+    color: white;
+}
+
+
+.comment
+{
+    width: 900px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#id_text
+{
+    width: 900px;
+    height: 120px;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-top: 10px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(51, 51, 51, 0.25);
+    color: white;
+    margin-bottom: 21px;
+    resize: none;
+    overflow-y: scroll;
+}
+
+button
+{
+    width: 200px;
+    height: 38px;
+    background: none;
+    justify-content: center;
+    display: block;
+    text-align: center;
+    color: #FFFFFF;
+    border: #FFB800 solid 1px;
+    border-radius: 4px;
+    margin-bottom: 21px;
+}
+
+button:hover
+{
+    background: #FFB800;
+    color: black;
+}
+
+.container-2
+{
+    width: 900px;
+    margin: auto;
+    position: relative;
+}
+
+.flex-wrapper
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.flex-wrapper > div
+{
+    flex-basis: 900px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-wrapper > div .com
+{
+    display: flex;
+    width: 900px;
+}
+
+.flex-wrapper div > .com1
+{
+    position: relative;
+    width: 900px;
+    height: 120px;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-top: 10px;
+    border: none;
+    border-radius: 4px;
+    background: rgba(51, 51, 51, 0.25);
+    color: white;
+    margin-bottom: 21px;
+}
+
+.delete
+{
+    text-decoration: none;
+    color:white;
+    opacity: 0.5;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    right: 128px;
+    bottom: 20px;
+}
+
+.date
+{
+    text-decoration: none;
+    color:white;
+    opacity: 0.5;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    bottom: 20px;
+    position: absolute;
+    right: 20px;
+}
+
+.name
+{
+    text-decoration: none;
+    color:white;
+    opacity: 0.5;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+}
+
+.imgg
+{
+    text-align: center;
+    margin-bottom: 21px;
+}

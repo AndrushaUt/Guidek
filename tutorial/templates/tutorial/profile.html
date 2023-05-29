@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guidek</title>
+    <link rel="stylesheet" href="{% static 'tutorial/css/profile.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-1">
+        <div class="gradient-1">
+            <div class="container">
+                    <div class="n">
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'login_home' %}"><img
+                            src="{% static 'tutorial/images/logo2.0.png' %}" alt=""
+                            id="logo"></a>
+                            <div class="key">
+                                <a href="{% url 'logout' 0%}">Выйти</a>
+                            </div>
+                            <div class="key2">
+                                <a href="{% url 'create_post'%}">Создать гайд</a>
+                            </div>
+                            <div class="key1">
+                                <a href="{% url 'user_page' user.username 1%}">{{ user.username }}</a>
+                            </div>
+                        {% else %}
+                            <a href="{% url 'home' %}"><img
+                                src="{% static 'tutorial/images/logo2.0.png' %}" alt=""
+                                id="logo"></a>
+                            <div class="key">
+                                <a href="{% url 'auth' 1 %}">Войти</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                <div class="fast-search">
+                    <div class="se"><p>{{ user_name }}</p></div>
+                    {% if staff %}
+                        <p class="user">Администратор</p>
+                    {% else %}
+                        <p class="user">Пользователь</p>
+                    {% endif %}
+                    <p class="date1">Дата Регистрации:&nbsp&nbsp&nbsp&nbsp{{ date }}</p>
+                    <p class="date1">Количество постов:&nbsp&nbsp&nbsp&nbsp{{ amount_of_posts }}</p>
+                    {% if last_date %}
+                        <p class="date1">Дата последнего поста:&nbsp&nbsp&nbsp&nbsp{{ last_date }}</p>
+                    {% else %}
+                        <p class="date1">Дата последнего поста:&nbsp&nbsp&nbsp&nbspПока нет постов</p>
+                    {% endif %}
+                    <p class="content">{{ post.content }}</p>
+                </div>
+                <form action="">
+                    <div class="mb-3">
+                        <input class="search" placeholder="Поиск" name="searchPost"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Search
+                    </button>
+                </form>
+            </div>
+            <div class="container">
+                <div class="flex-wrapper">
+                    {% if posts %}
+                        {% for post in posts %}
+                        <div class="offer-1">
+                            <div class="first">
+                                {% if post.photo %}
+                                    <img src="/media/{{ post.photo }}"
+                                        style="width: 360px; height: 216px"
+                                        alt="">
+                                {% else %}
+                                    <img src="{% static 'tutorial/images/default_picture.png' %}"
+                                        style="width: 360px; height: 216px"
+                                        alt="">
+                                {% endif %}
+                            </div>
+                            <div class="second">
+                                <h3>{{ post.title }}</h3>
+                                <p class="description">{{ post.description }}</p>
+                                {#!!!!!сделать описание не более 20 !!!!!#}
+                                <a class="more" href="{% url 'view_post' post.pk %}">Подробнее</a>
+                                <a class="user_name"
+                                href="{% url 'user_page' post.username 1 %}">{{ post.username }}</a>
+                                <p class="date">{{ post.date }}</p>
+                                {% if user.is_authenticated%}
+                                    {% if post.id in like_list %}
+                                        <a href="{% url 'like' post.id 0 %}" class="Like"><img src="{% static 'tutorial/images/full heart.png' %}" alt="" id="like"></a>
+                                    {% else %}
+                                        <a href="{% url 'like' post.id 1 %}" class="Like"><img src="{% static 'tutorial/images/empty heart.png' %}" alt="" id="like"></a>
+                                    {% endif %}
+                                {% else %}
+                                    <a href="{% url 'auth' 0 %}" class="Like"><img src="{% static 'tutorial/images/empty heart.png' %}" alt="" id="like"></a>
+                                {% endif %}
+                                <p class="likes_amount">{{ post.likes_amount }}</p>
+                                {% if user_name == username_visitor %}
+                                    <a class="edit" href="{% url 'edit' post.pk %}">Изменить</a>
+                                    <a class="delete" href="{% url 'delete_post' post.pk %}">Удалить</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% elif searchPost %}
+                        <h2>По вашему запросу ничего не найдено</h2>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="container-1">
+                {% if not searchPost and posts%}
+                    {% if prev_num <= 0%}
+                        <a style="color: grey"><-</a>
+                    {% else %}
+                        <a href="{% url 'user_page' user_name prev_num %}"><-</a>
+                    {% endif %}
+                    <a>{{ page_num }}</a>
+                    {% if max_amount_of_posts_in_current_page >= amount_of_posts%}
+                        <a style="color: grey">-></a>
+                    {% else %}
+                        <a href="{% url 'user_page' user_name next_num %}">-></a>
+                    {% endif %}
+                {% endif %}
+        </div>
+        </div>
+    </div>
+</body>
+</html>
